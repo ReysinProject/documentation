@@ -1,0 +1,39 @@
+---
+title: Main Concept
+description: The main concept of the project entry point
+sidebar:
+  order: 0
+---
+
+The `main.tsx` file serves as the entry point for your Reysin application. It initializes the Reysin framework and sets up the root React component.
+
+## Basic Usage
+
+Here's a typical `main.tsx` file for a Reysin application:
+
+```typescript jsx
+import { type AppContainer, Reysin, ReysinApp } from "@reysin/project";
+import React from "react";
+
+new Reysin((container: AppContainer) => {
+  return (
+   <React.StrictMode>
+    <ReysinApp container={container} />
+   </React.StrictMode>
+  );
+});
+```
+
+Let's break down this code:
+
+1. We import necessary components from the Reysin framework and React.
+2. We create a new instance of the `Reysin` class, which initializes our application.
+3. The `Reysin` constructor takes a function as an argument. This function receives an `AppContainer` and returns the root React component.
+4. We wrap our `ReysinApp` component with `React.StrictMode` for additional development checks.
+5. The `ReysinApp` component receives the `container` as a prop, which will be used to manage the application's state and dependencies.
+
+## Key Components
+
+- `Reysin`: The main class that bootstraps your application.
+- `AppContainer`: A container that manages your application's dependencies and state.
+- `ReysinApp`: The root component of your Reysin application.

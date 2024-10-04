@@ -20,6 +20,14 @@ export default defineConfig({
 					}
 				},
 				{
+					label: 'App Entrypoint',
+					autogenerate: { directory: 'app_entrypoint' },
+					badge: {
+						text: 'WIP',
+						variant: 'danger'
+					}
+				},
+				{
 					label: 'Reference',
 					autogenerate: { directory: 'reference' },
 					badge: {
