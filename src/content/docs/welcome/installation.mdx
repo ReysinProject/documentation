@@ -1,0 +1,77 @@
+---
+title: Installation Guide
+description: Learn how to install and configure Reysin for your project
+sidebar:
+  order: 1
+---
+
+import {Aside, Card, CardGrid, FileTree} from "@astrojs/starlight/components";
+
+## Prerequisites
+
+Before installing Reysin, make sure you have the following installed on your system:
+
+- Node.js (version 21.0.0 or higher)
+- pnpm (`npm install -g pnpm`)
+
+<Aside type={'caution'}>
+  You can also use npm or other packages manager but we recommend pnpm
+</Aside>
+
+## Installation
+
+1. Open your terminal.
+
+2. Create a new Reysin project using the following command:
+
+   ```bash
+   npm create reysin-app@latest my-reysin-project
+   ```
+
+3. Follow the on-screen instructions to configure your project.
+
+4. Once the installation is complete, navigate to your project directory:
+
+   ```bash
+   cd my-reysin-project
+   ```
+
+5. Start the development server:
+
+   ```bash
+   pnpm dev
+   ```
+
+Your Reysin application is now running! Open your browser and go to `http://localhost:3000` to see your new application.
+
+## Project structure
+
+After installation, your project will have the following structure:
+
+<FileTree>
+  - .gitignore
+  - biome.json
+  - index.html
+  - package.json
+  - pnpm-lock.yaml
+  - reysin.config.yaml
+  - tsconfig.json
+  - public/
+  - src
+    - apps
+      - example
+        - models
+          - MyFirstModel.ts
+          - MySecondModel.ts
+        - routes
+          - HomeRoute.ts
+        - services
+          - ThisService.ts
+          - ThisSecondService.ts
+        - viewmodels
+          - MyFirstViewModel.ts
+        - views
+          - ThisExample.tsx
+          - SecondExample.tsx
+    - main.tsx
+</FileTree>

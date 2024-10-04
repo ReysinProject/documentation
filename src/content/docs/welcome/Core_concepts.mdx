@@ -1,0 +1,164 @@
+---
+title: Core Concepts
+description: Understanding the fundamental principles and architecture of Reysin
+sidebar:
+  order: 2
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Steps } from '@astrojs/starlight/components';
+
+Reysin is built around several key concepts that form its architecture and guide application development. Understanding these concepts will help you make the most of the framework.
+
+## Model-View-ViewModel (MVVM)
+
+Reysin adopts the Model-View-ViewModel (MVVM) architecture, which clearly separates the user interface logic, facilitating the development and maintenance of applications.
+
+<CardGrid stagger>
+  <Card title="Model" icon="document">
+    Represents the data and business logic of your application.
+  </Card>
+  <Card title="View" icon="open-book">
+    Responsible for displaying data to the user.
+  </Card>
+  <Card title="ViewModel" icon="random">
+    Acts as an intermediary layer between models and views.
+  </Card>
+</CardGrid>
+
+### Model
+
+Models represent the data and business logic of your application. They are independent of the user interface and can be reused in different parts of your application.
+
+Example of a model:
+
+```typescript
+export class User {
+  constructor(
+    public id: string,
+    public name: string,
+    public email: string
+  ) {}
+}
+```
+
+### View
+
+Views are responsible for displaying data to the user. In Reysin, views are typically React components that receive data via props and emit events.
+
+Example of a view:
+
+```tsx
+import React from 'react';
+import { User } from '../models/User';
+import { observer } from '@reysin/project'
+
+interface UserViewProps {
+  user: User;
+  onUpdateUser: (user: User) => void;
+}
+
+export const UserView: React.FC<UserViewProps> = observer(({ user, onUpdateUser }) => {
+  return (
+    <div>
+      <h2>{user.name}</h2>
+      <p>{user.email}</p>
+      <button onClick={() => onUpdateUser(user)}>Update User</button>
+    </div>
+  );
+});
+```
+
+### ViewModel
+
+ViewModels act as an intermediary layer between models and views. They contain the presentation logic and handle user interactions.
+
+Example of a ViewModel:
+
+```typescript
+import { transient } from 'reysin';
+import { User } from '../models/User';
+import { UserService } from '../services/UserService';
+
+@transient()
+export class UserViewModel {
+  private _user: User | null = null;
+
+  constructor(private userService: UserService) {}
+
+  async loadUser(id: string): Promise<void> {
+    this._user = await this.userService.getUser(id);
+  }
+
+  get user(): User | null {
+    return this._user;
+  }
+
+  updateUser(updatedUser: User): void {
+    this.userService.updateUser(updatedUser);
+    this._user = updatedUser;
+  }
+}
+```
+
+## Service Management
+
+Reysin uses a dependency injection system to manage services. Services are singleton classes that encapsulate business logic and data operations.
+
+```typescript
+import { singleton } from 'reysin';
+import { User } from '../models/User';
+
+@singleton()
+export class UserService {
+  private users: User[] = [];
+
+  async getUser(id: string): Promise<User | undefined> {
+    // Simulating an API request
+    return this.users.find(user => user.id === id);
+  }
+
+  async updateUser(updatedUser: User): Promise<void> {
+    // Simulating an API update
+    const index = this.users.findIndex(user => user.id === updatedUser.id);
+    if (index !== -1) {
+      this.users[index] = updatedUser;
+    }
+  }
+}
+```
+
+## IoC Container
+
+Reysin uses an Inversion of Control (IoC) container to manage dependencies. This allows for better modularity and testability of your code.
+
+:::tip[Automatic Bootstrapping]
+All the dependencies are automatically bootstrapped when the application is started.
+:::
+
+## Integrated CLI
+
+Reysin provides a powerful CLI to quickly generate components, services, and ViewModels. This helps maintain a consistent project structure.
+
+<Steps>
+1. Open your terminal in the project root.
+2. Run the Reysin CLI command to generate the desired component:
+   ```bash
+   reysin generate component UserList
+   ```
+3. The CLI will create the necessary files and update any related configurations.
+4. Repeat for other components, services, or ViewModels as needed:
+   ```bash
+   reysin generate service AuthService
+   reysin generate viewmodel ProductViewModel
+   ```
+</Steps>
+
+## Strong Typing with TypeScript
+
+Reysin is fully written in TypeScript and encourages the use of strict types to improve code quality and reduce errors.
+
+## Based on Vite
+
+Reysin uses Vite as a bundler, offering fast compilation times and excellent support for modern development.

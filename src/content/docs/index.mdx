@@ -1,36 +1,73 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
+title: Reysin - The React Revolution
+description: Simplify complexity, amplify productivity
 template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: Your all-in-one toolchain for powerful and structured React projects
   image:
-    file: ../../assets/houston.webp
+    file: ../../assets/logo.png
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: Quick Start
+      link: /welcome
+      variant: primary
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
+    - text: View on GitHub
+      link: https://github.com/reysin/reysin-framework
+      variant: secondary
       icon: external
-      variant: minimal
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
+## The power of React, simplified
+
+Reysin is the TypeScript framework that revolutionizes React development. Designed for speed, clarity, and power.
+
+<CardGrid stagger>
+  <Card title="Built-in MVVM structure" icon="layout">
+    Organize your code intuitively and maintainably.
+  </Card>
+  <Card title="Intelligent CLI" icon="terminal">
+    Generate your project and its components in a few commands.
+  </Card>
+  <Card title="Simplified state management" icon="random">
+    A main container for all your ViewModels and services.
+  </Card>
+  <Card title="Native TypeScript" icon="approve-check">
+    Secure your code with strong typing and advanced model management.
+  </Card>
+</CardGrid>
+
+## Get started in a flash
+
+```bash
+npm create reysin-app@latest my-reysin-project
+cd my-reysin-project
+npm run dev
+```
+
+## Why Reysin?
+
+- **Based on Vite**: Ultra-fast development and instant reloading
+- **MVVM Architecture**: Clear separation between logic and presentation
+- **Powerful CLI**: Generate components, services, and ViewModels effortlessly
+- **Built-in IoC Container**: Simplified dependency management
+- **100% TypeScript**: Benefit from strong typing for robust code
+- **Extensible**: Adapt Reysin to your specific needs
+
 ## Next steps
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
+  <Card title="Getting Started Guide" icon="rocket">
+    Create your first Reysin application in minutes.
+  </Card>
+  <Card title="Core Concepts" icon="open-book">
+    Master the MVVM architecture and Reysin principles.
+  </Card>
+  <Card title="API Reference" icon="document">
+    Explore Reysin's tools and utilities in detail.
+  </Card>
+  <Card title="Real-world Examples" icon="puzzle">
+    Get inspired by real projects built with Reysin.
+  </Card>
 </CardGrid>
