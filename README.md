@@ -38,3 +38,7 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm preview`         | Preview your build locally, before deploying     |
 | `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `pnpm astro -- --help` | Get help using the Astro CLI                     |
+
+## 🤝 Contributing
+
+We welcome contributions to the Reysin project! Please see our [CONTRIBUTING.md](CONTRIBUTING.md) file for details on how to get started, our code of conduct, and the process for submitting pull requests.
