@@ -5,6 +5,10 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'Reysin',
+			logo: {
+				src: '/public/logo.png',
+				alt: 'Reysin',
+			},
 			social: {
 				github: 'https://github.com/ReysinProject',
 			},

@@ -16,26 +16,50 @@ hero:
       variant: secondary
       icon: external
 ---
-
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import '../documentation/src/content/docs/styles/card.css';
+import { Icon, CardGrid } from '@astrojs/starlight/components';
 
 ## The power of React, simplified
 
 Reysin is the TypeScript framework that revolutionizes React development. Designed for speed, clarity, and power.
 
 <CardGrid stagger>
-  <Card title="Built-in MVVM structure" icon="layout">
-    Organize your code intuitively and maintainably.
-  </Card>
-  <Card title="Intelligent CLI" icon="terminal">
-    Generate your project and its components in a few commands.
-  </Card>
-  <Card title="Simplified state management" icon="random">
-    A main container for all your ViewModels and services.
-  </Card>
-  <Card title="Native TypeScript" icon="approve-check">
-    Secure your code with strong typing and advanced model management.
-  </Card>
+    <div className={'custom-card'}>
+        <div className={'head-card'}>
+            <div className={'square-icon'}>
+                <Icon name = "seti:powershell"></Icon>
+            </div>
+            Built-in MVVM structure
+        </div>
+          Organize your code intuitively and maintainably.
+    </div>
+    <div className={'custom-card'}>
+        <div className={'head-card'}>
+            <div className={'square-icon'}>
+                <Icon name = "star"></Icon>
+            </div>
+            Intelligent CLI
+        </div>
+        Generate your project and its components in a few commands.
+    </div>
+    <div className={'custom-card'}>
+        <div className={'head-card'}>
+            <div className={'square-icon'}>
+                <Icon name = "random"></Icon>
+            </div>
+            Simplified state management
+        </div>
+        A main container for all your ViewModels and services.
+    </div>
+    <div className={'custom-card'}>
+    <div className={'head-card'}>
+        <div className={'square-icon'}>
+            <Icon name = "approve-check"></Icon>
+        </div>
+        Native TypeScript
+    </div>
+        Secure your code with strong typing and advanced model management.
+</div>
 </CardGrid>
 
 ## Get started in a flash
@@ -46,28 +70,57 @@ cd my-reysin-project
 npm run dev
 ```
 
-## Why Reysin?
+## Why Reysin ?
 
-- **Based on Vite**: Ultra-fast development and instant reloading
-- **MVVM Architecture**: Clear separation between logic and presentation
-- **Powerful CLI**: Generate components, services, and ViewModels effortlessly
-- **Built-in IoC Container**: Simplified dependency management
-- **100% TypeScript**: Benefit from strong typing for robust code
-- **Extensible**: Adapt Reysin to your specific needs
+- <div className={"Icon-li"}><Icon name = "seti:vue" ></Icon></div> **Based on Vite :**<br/> Ultra-fast development and instant reloading
+- <div className={"Icon-li"}><Icon name = "information" ></Icon></div> **MVVM Architecture :**<br/> Clear separation between logic and presentation
+- <div className={"Icon-li"}><Icon name = "seti:favicon" ></Icon></div> **Powerful CLI :**<br/> Generate components, services, and ViewModels effortlessly
+- <div className={"Icon-li"}><Icon name = "puzzle" ></Icon></div> **Built-in IoC Container :**<br/> Simplified dependency management
+- <div className={"Icon-li"}><Icon name = "seti:typescript" ></Icon></div> **100% TypeScript :**<br/> Benefit from strong typing for robust code
+- <div className={"Icon-li"}><Icon name = "pencil" ></Icon></div> **Extensible :**<br/> Adapt Reysin to your specific needs
 
 ## Next steps
 
 <CardGrid stagger>
-  <Card title="Getting Started Guide" icon="rocket">
-    Create your first Reysin application in minutes.
-  </Card>
-  <Card title="Core Concepts" icon="open-book">
-    Master the MVVM architecture and Reysin principles.
-  </Card>
-  <Card title="API Reference" icon="document">
-    Explore Reysin's tools and utilities in detail.
-  </Card>
-  <Card title="Real-world Examples" icon="puzzle">
-    Get inspired by real projects built with Reysin.
-  </Card>
+    <div className={'custom-card'}>
+        <div className={'head-card'}>
+            <div className={'square-icon'}>
+                <Icon name = "rocket"></Icon>
+            </div>
+            Getting Started Guide
+        </div>
+        Create your first Reysin application in minutes.
+    </div>
+
+    <div className={'custom-card'}>
+        <div className={'head-card'}>
+            <div className={'square-icon'}>
+                <Icon name = "open-book"></Icon>
+            </div>
+            Core Concepts
+        </div>
+        Master the MVVM architecture and Reysin principles.
+
+    </div>
+
+    <div className={'custom-card'}>
+        <div className={'head-card'}>
+            <div className={'square-icon'}>
+                <Icon name = "document"></Icon>
+            </div>
+            API Reference
+        </div>
+        Explore Reysin's tools and utilities in detail.
+    </div>
+
+    <div className={'custom-card'}>
+        <div className={'head-card'}>
+            <div className={'square-icon'}>
+                <Icon name = "puzzle"></Icon>
+            </div>
+            Real-world Examples
+        </div>
+        Get inspired by real projects built with Reysin.
+    </div>
 </CardGrid>
+<script src="./src/content/docs/styles/bgCards.js"></script>
