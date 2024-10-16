@@ -30,6 +30,7 @@
     transition: transform 0.2s, box-shadow 0.2s;
     color: var(--clr-secondary-font);
     cursor: default;
+    backdrop-filter: blur(10px);
 }
 .custom-card:hover, .custom-card:nth-of-type(3):hover{
     border: 1px solid var(--orange-primary);
@@ -141,6 +142,7 @@ ul li{
     backdrop-filter: blur(10px);
     cursor: pointer;
     margin: 10px 0;
+    border: 1px solid rgb(78, 78, 78);
     transition: transform 0.3s;
 }
 
@@ -153,7 +155,7 @@ ul li .Icon-li {
     margin-bottom: 5%;
     color: var(--clr-font);
     font-size: 1.5rem;
-    background: transparent;
+    background:transparent;
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -192,6 +194,6 @@ ul li:hover .Icon-li::before {
     border: none;
 }
 
-.content-panel{
-    /*background: radial-gradient(circle, var(--orange-primary), var(--orange-secondary));*/
+.content-panel {
+    background-attachment: fixed;
 }
