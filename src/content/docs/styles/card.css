@@ -96,6 +96,35 @@
     border: none;
     box-shadow: 0 2px 30px var(--astro-code-token-link);
 }
+.sl-link-button.primary svg  {
+    animation: arrow 2s infinite;
+}
+.sl-link-button.primary:hover svg  {
+    animation: arrow2 1s infinite;
+}
+@keyframes arrow {
+    0% {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+}
+@keyframes arrow2 {
+    0% {
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    100% {
+    }
+}
+
 ul{
     display: flex;
     justify-content: space-between;
@@ -105,23 +134,64 @@ ul{
 }
 
 ul li{
-    background: #1a1a1a;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 3%;
+    border-radius: 8px;
+    color: var(--clr-secondary-font);
     width: 30%;
-    text-align: center;
-    color: white;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
     margin: 10px 0;
     transition: transform 0.3s;
 }
 
-ul li .strong{
-    background: #1a1a1a;
-    padding: 20px;
-    border-radius: 10px;
-    width: 30%;
-    text-align: center;
-    color: white;
-    margin: 10px 0;
-    transition: transform 0.3s;
+
+ul li strong {
+    color: var(--clr-font);
+}
+
+ul li .Icon-li {
+    margin-bottom: 5%;
+    color: var(--clr-font);
+    font-size: 1.5rem;
+    background: transparent;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 12px var(--orange-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    background-clip: padding-box;
+    position: relative;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+ul li .Icon-li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--orange-primary);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+ul li:hover .Icon-li {
+    box-shadow: none;
+}
+ul li:hover .Icon-li::before {
+    opacity: 1;
+}
+
+.header {
+    backdrop-filter: blur(10px);
+    background: none;
+    border: none;
+}
+
+.content-panel{
+    /*background: radial-gradient(circle, var(--orange-primary), var(--orange-secondary));*/
 }

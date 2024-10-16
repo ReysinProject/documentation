@@ -5,9 +5,6 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'Reysin',
-			customCss: [
-				'./src/content/docs/styles/card.css',
-			],
 			social: {
 				github: 'https://github.com/ReysinProject',
 			},
